@@ -1,0 +1,70 @@
+/* PostPage.css */
+
+#post-page {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .post-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .post-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 1.5rem 0;
+    border-radius: 0.5rem;
+  }
+  
+  .post-body {
+    line-height: 1.8;
+    font-size: 1.1rem;
+  }
+  
+  .post-body p {
+    margin-bottom: 1.5rem;
+  }
+  
+  .post-body h2, 
+  .post-body h3, 
+  .post-body h4 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  
+  .comment-form textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  .comment {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+  }
+  
+  .comment:last-child {
+    border-bottom: none;
+  }
+  
+  .author-card {
+    border: 1px solid #eee;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .post-title {
+      font-size: 2rem;
+    }
+    
+    .post-content {
+      font-size: 1rem;
+    }
+  }

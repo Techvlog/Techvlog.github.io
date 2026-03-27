@@ -1,0 +1,224 @@
+
+
+/* Remove backdrop dimming */
+.modal-backdrop {
+    display: none !important;
+}
+
+/* Make modal non-blocking */
+.modal {
+    pointer-events: none;
+}
+
+.modal-dialog {
+    pointer-events: all;
+}
+
+.nature-modal .modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 10px 30px rgba(46, 125, 50, 0.3);
+    border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.nature-modal .modal-header {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border-bottom: none;
+    padding: 20px;
+    position: relative;
+}
+
+.nature-modal .modal-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #a5d6a7, #81c784, #4caf50);
+}
+
+.nature-modal .modal-title {
+    color: #2e7d32;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.nature-modal .modal-title i {
+    margin-right: 10px;
+    font-size: 1.4rem;
+}
+
+.nature-modal .modal-body {
+    padding: 25px;
+    color: #1b5e20;
+    background-color: #f8fdf8;
+}
+
+.nature-modal .modal-footer {
+    border-top: none;
+    padding: 15px 25px;
+    background-color: #f1f8f1;
+}
+
+/* Buttons */
+.btn-nature {
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-nature-primary {
+    background: linear-gradient(135deg, #a5d6a7, #81c784);
+    color: white;
+}
+
+.btn-nature-primary:hover {
+    background: linear-gradient(135deg, #81c784, #4caf50);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.3);
+}
+
+.btn-nature-warning {
+    background: linear-gradient(135deg, #ffcc80, #ffb74d);
+    color: #e65100;
+}
+
+.btn-nature-warning:hover {
+    background: linear-gradient(135deg, #ffb74d, #ffa726);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(255, 167, 38, 0.3);
+}
+
+/* Demo button */
+.demo-btn {
+    margin: 50px auto;
+    display: block;
+    max-width: 300px;
+}
+.btn-logout {
+    position: relative;
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    color: #2e7d32;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.2);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-logout:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 125, 50, 0.3);
+    color: #d32f2f; /* Change text to soft red on hover */
+}
+
+.btn-logout:active {
+    transform: translateY(0);
+}
+
+.btn-logout::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 235, 238, 0.8), rgba(255, 205, 210, 0.6));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.btn-logout:hover::before {
+    opacity: 1; /* Show warning tint on hover */
+}
+
+.btn-logout .icon {
+    margin-right: 10px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.btn-logout:hover .icon {
+    color: #d32f2f; /* Change icon to soft red on hover */
+    transform: rotate(180deg);
+}
+
+.btn-logout .text {
+    position: relative;
+    z-index: 1;
+}
+
+/* Optional ripple effect */
+.btn-logout::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.btn-logout:hover::after {
+    opacity: 1;
+}
+.profile-section {
+    cursor: pointer;
+  }
+  
+  .profile-image-container {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+  
+  .profile-link {
+    font-size: 0.7rem;
+    color: #6c757d;
+    text-decoration: none;
+  }
+  
+  .profile-link:hover {
+    color: #0d6efd;
+    text-decoration: underline;
+  }
+  
+  .btn-logout {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  
+  @media (max-width: 991.98px) {
+    .profile-info {
+      display: none;
+    }
+  }

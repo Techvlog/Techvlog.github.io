@@ -1,0 +1,609 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Next Gen Light Theme Colors */
+  --bg-dark: #f8f9fa;
+  --bg-darker: #ffffff;
+  --text-primary: #212529;
+  --text-secondary: #495057;
+
+  /* Vibrant Accents */
+  /* Professional Minimalist Accents */
+  --accent-primary: #1a1a1a;
+  /* Deep Black */
+  --accent-secondary: #4a4a4a;
+  /* Dark Gray */
+  --accent-gradient: linear-gradient(135deg, #1a1a1a, #4a4a4a);
+
+  /* Glassmorphism settings */
+  /* Glassmorphism settings - Minimal */
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  /* slight dark edge */
+  --glass-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.03);
+  --glass-hover: #ffffff;
+
+  --radius-sm: 10px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.1);
+  --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--accent-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-primary);
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Base Glassmorphism Class */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.glass-panel:hover {
+  background: var(--glass-hover);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.img-hover-zoom {
+  overflow: hidden;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.img-hover-zoom img {
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.glass-panel:hover .img-hover-zoom img {
+  transform: scale(1.08);
+}
+
+.card-title-hover {
+  transition: var(--transition-smooth);
+}
+
+.glass-panel:hover .card-title-hover {
+  color: var(--accent-primary) !important;
+  background: linear-gradient(135deg, #000, #434343);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--accent-gradient);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  padding: 10px 24px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(139, 92, 246, 0.3);
+}
+
+.btn-primary:hover {
+  background: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  backdrop-filter: blur(4px);
+}
+
+.btn-outline:hover {
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-up {
+  opacity: 0;
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+}
+
+/* Helpers */
+.text-gradient {
+  background: linear-gradient(45deg, #000000, #434343);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-darker {
+  background-color: var(--bg-darker);
+}
+
+/* Form inputs */
+.form-control {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+}
+
+.form-control:focus {
+  background-color: #ffffff;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+  color: var(--text-primary);
+}
+
+.form-control::placeholder {
+  color: #adb5bd;
+}
+
+/* New Utilities for Minimalist Design */
+.hover-bg-light:hover {
+  background-color: #f8f9fa !important;
+}
+
+.border-subtle {
+  border-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.shadow-minimal {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03) !important;
+}
+
+.hover-shadow-lg:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06) !important;
+}
+
+.text-muted-v2 {
+  color: #8a8a8a;
+}
+
+.border-light-subtle {
+  border-color: #f1f1f1 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN — Mobile-first approach
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Base mobile-first fixes ─────────────────────────────────────────────── */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* ── Mobile: up to 480px ─────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem !important;
+  }
+
+  .glass-panel {
+    border-radius: 12px;
+  }
+
+  .glass-panel p-5,
+  .glass-panel.p-5 {
+    padding: 1.25rem !important;
+  }
+
+  /* Auth forms */
+  #login-page .glass-panel,
+  #register-page .glass-panel {
+    padding: 1.25rem !important;
+    margin: 0 0.25rem;
+  }
+
+  #login-page h2,
+  #register-page h2 {
+    font-size: 1.75rem !important;
+  }
+
+  /* Navbar buttons shrink */
+  .navbar .btn {
+    padding: 0.3rem 0.8rem !important;
+    font-size: 0.78rem !important;
+  }
+
+  /* Pagination buttons */
+  .pg-btn {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 0.7rem !important;
+  }
+
+  /* Post page title */
+  #post-page h1 {
+    font-size: 1.6rem !important;
+  }
+
+  /* Profile stat cards */
+  .col-md-3 .glass-panel h2 {
+    font-size: 1.8rem !important;
+  }
+
+  /* Featured card images */
+  .feat-card img {
+    height: 180px !important;
+  }
+
+  /* Rec card images */
+  .rec-card img {
+    height: 120px !important;
+  }
+}
+
+/* ── Small devices: 481px – 576px ────────────────────────────────────────── */
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  /* Story row on home page — stack vertically */
+  .story-row {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  .story-row img {
+    width: 100% !important;
+    height: 180px !important;
+    border-radius: 4px;
+  }
+
+  /* Sidebar blocks full width */
+  .sidebar-block {
+    margin-bottom: 1rem;
+  }
+
+  /* Popular item image */
+  .popular-item img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  /* Rec section — reduce padding */
+  .rec-section {
+    padding: 1.25rem !important;
+    margin: 1.5rem 0 !important;
+  }
+
+  /* Recommendation cards: 2 columns */
+  .rec-section .col-lg-3 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+/* ── Medium devices: up to 768px ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .navbar {
+    padding: 0.6rem 0 !important;
+  }
+
+  .navbar-brand {
+    font-size: 1.3rem !important;
+  }
+
+  .navbar .navbar-collapse {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    margin-top: 0.75rem;
+  }
+
+  .navbar .navbar-nav {
+    gap: 0.25rem;
+  }
+
+  .navbar .navbar-nav .nav-link {
+    padding: 0.6rem 1rem !important;
+    border-radius: 8px !important;
+  }
+
+  .navbar .d-flex.align-items-center {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+  }
+
+  /* Profile dropdown */
+  .dropdown-menu {
+    position: static !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.06) !important;
+    margin-top: 0.5rem !important;
+  }
+
+  /* Home page — sidebar stacks below main */
+  #home-page .col-lg-8,
+  #home-page .col-lg-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  #home-page .col-lg-4>div {
+    position: static !important;
+  }
+
+  /* Home featured cards — single column */
+  #home-page .col-md-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Discover page — sidebar stacks above */
+  #discover-page .col-lg-3,
+  #discover-page .col-lg-9 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .cat-nav {
+    position: static !important;
+    margin-bottom: 1.5rem;
+  }
+
+  .cat-nav nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .cat-link {
+    display: inline-block !important;
+    border: 1px solid rgba(17, 17, 17, 0.08) !important;
+    border-left: none !important;
+    border-radius: 4px !important;
+    padding: 4px 12px !important;
+    font-size: 0.75rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  .cat-link.active {
+    background: var(--ink, #111) !important;
+    color: #fff !important;
+    border-color: var(--ink, #111) !important;
+  }
+
+  /* Discover cards single column */
+  #discover-page .col-md-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Profile page — sidebar stacks */
+  #your-blog-page .col-lg-3,
+  #your-blog-page .col-lg-9 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  #your-blog-page .col-lg-3 .glass-panel {
+    margin-bottom: 1.5rem;
+  }
+
+  #your-blog-page .col-lg-3 .nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  #your-blog-page .col-lg-3 .nav-item {
+    margin-bottom: 0 !important;
+  }
+
+  #your-blog-page .col-lg-3 .nav-item .nav-link {
+    padding: 0.4rem 0.8rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  /* Stats cards 2 per row on tablet */
+  #your-blog-page .col-md-3 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+
+  /* Post page — full width */
+  #post-page .col-lg-8 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  #post-page h1 {
+    font-size: 1.8rem !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Post action buttons stack */
+  #post-page .d-flex.justify-content-between {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Similar posts — single column */
+  #post-page .col-md-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Table responsive scroll */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table th,
+  .table td {
+    white-space: nowrap;
+    font-size: 0.82rem !important;
+    padding: 0.5rem !important;
+  }
+
+  /* Auth pages */
+  #login-page .col-lg-6,
+  #register-page .col-lg-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Publication cards */
+  .col-lg-4,
+  .col-md-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Recommendation cards: 2 columns on tablet */
+  .rec-section .col-lg-3 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+
+  /* Other profile */
+  .col-lg-4.order-lg-2 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ── Tablet - up to 992px ────────────────────────────────────────────────── */
+@media (max-width: 992px) {
+
+  /* Ensure sidebar un-stickies */
+  #home-page .col-lg-4>div,
+  .cat-nav {
+    position: static !important;
+  }
+
+  /* General spacing adjustments */
+  .py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .row.g-5 {
+    --bs-gutter-y: 1.5rem !important;
+    --bs-gutter-x: 1rem !important;
+  }
+}
+
+/* ── Desktop-only refinements ────────────────────────────────────────────── */
+@media (min-width: 769px) {
+
+  /* Ensure 2-col grid for home featured cards */
+  #home-page .row.g-4 .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* Discover cards 2-col */
+  #discover-page .row.g-3 .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* ── Smooth mobile transitions ───────────────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+
+  .glass-panel,
+  .feat-card,
+  .disc-card,
+  .rec-card,
+  .story-row,
+  .btn,
+  .nav-link,
+  .cat-link {
+    transition: all 0.25s ease;
+  }
+}
+
+/* ── Print-friendly ──────────────────────────────────────────────────────── */
+@media print {
+
+  .navbar,
+  .hero-section,
+  .rec-section,
+  .sidebar-block,
+  .cat-nav {
+    display: none !important;
+  }
+}

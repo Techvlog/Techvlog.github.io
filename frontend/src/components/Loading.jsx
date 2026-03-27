@@ -203,7 +203,7 @@ const Loading = () => {
         </div>
 
         {/* Heading with your brand font */}
-        <h1 style={styles.heading}>BlogHub</h1>
+        <h1 style={styles.heading}>Techvlog</h1>
         <p style={styles.subtitle}>Curating knowledge, expanding horizons</p>
 
         {/* Loading message */}

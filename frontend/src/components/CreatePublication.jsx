@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import { createPublication, updatePublication, getPublication } from "../api/api";
+import { createPublication, updatePublication, getPublication, API_URL } from "../api/api";
 import { toast } from "react-toastify";
 import Loading from "./Loading";
 
@@ -35,7 +35,7 @@ function CreatePublication() {
     try {
       const fd = new FormData();
       fd.append("image", file);
-      const { data } = await axios.post("http://localhost:3000/image/upload", fd, {
+      const { data } = await axios.post(`${API_URL}/image/upload`, fd, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       return data.filepath;

@@ -11,19 +11,20 @@ import {
   profile,
   Otherprofile,
   popularposts,
+  API_URL,
 } from "../src/api/api";
 import { useContext } from "react";
 import { UserContext } from "../context/usercontext";
 
 export const checkloogedin = async () => {
-  const { data } = await axios.get("http://localhost:3000/auth/check", {
+  const { data } = await axios.get(`${API_URL}/auth/check`, {
     withCredentials: true,
   });
   
   return data;
 };
 export const logout = async () => {
-  const { data } = await axios.get("http://localhost:3000/auth/logout", {
+  const { data } = await axios.get(`${API_URL}/auth/logout`, {
     withCredentials: true,
   });
 };

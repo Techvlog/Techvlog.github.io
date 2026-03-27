@@ -48,7 +48,7 @@ function Navbar() {
             color: "#0a0a0a",
           }}
         >
-          BlogHub
+          Techvlog
         </Link>
 
           <button

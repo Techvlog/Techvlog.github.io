@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "../styles/blogdetails.css";
 import SignInModal from "./request";
 import { Link } from "react-router-dom";
-import { followUser, unfollowUser, checkFollow, fetchComments, saveBlogPost, unsaveBlogPost, checkSavedPost } from "../api/api";
+import { followUser, unfollowUser, checkFollow, fetchComments, saveBlogPost, unsaveBlogPost, checkSavedPost, API_URL } from "../api/api";
 import SubmitToPublicationModal from "./SubmitToPublicationModal";
 
 // ── safe category parser (handles Postgres arrays + JSON strings + csv) ───────
@@ -75,11 +75,11 @@ const PostPage = () => {
         let data;
         // Try slug endpoint first; fall back to ID endpoint for numeric params
         try {
-          const res = await axios.get(`http://localhost:3000/api/post/${slug}`);
+          const res = await axios.get(`${API_URL}/api/post/${slug}`);
           data = res.data;
         } catch (slugErr) {
           if (/^\d+$/.test(slug)) {
-            const res = await axios.get(`http://localhost:3000/api/getblog/${slug}`);
+            const res = await axios.get(`${API_URL}/api/getblog/${slug}`);
             data = res.data;
           } else {
             throw slugErr;
@@ -106,7 +106,7 @@ const PostPage = () => {
         setError(null);
 
         // Increment views using the post's ID
-        try { await axios.get(`http://localhost:3000/api/visit/${data.post.id}`); }
+        try { await axios.get(`${API_URL}/api/visit/${data.post.id}`); }
         catch (err) { console.error("View increment failed:", err); }
       } catch (err) {
         setError(err.message || "Failed to load post");
@@ -122,7 +122,7 @@ const PostPage = () => {
     try {
       setLikes((prev) => prev + 1);
       setone(true);
-      await axios.get(`http://localhost:3000/api/likes/${post.id}`, { withCredentials: true });
+      await axios.get(`${API_URL}/api/likes/${post.id}`, { withCredentials: true });
     } catch (error) {
       setLikes((prev) => prev - 1);
       setone(false);
@@ -160,7 +160,7 @@ const PostPage = () => {
       avatar: avatar || "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png",
     };
     try {
-      const { data } = await axios.post(`http://localhost:3000/api/comments/${post.id}`, newComment, { withCredentials: true });
+      const { data } = await axios.post(`${API_URL}/api/comments/${post.id}`, newComment, { withCredentials: true });
       setComments((prev) => [...prev, { ...newComment, author: "You" }]);
       setCommentText("");
       toast.success(data.message || "Comment posted successfully", { position: "top-right", autoClose: 5000, theme: "light" });
@@ -437,7 +437,7 @@ const PostPage = () => {
                     )}
                   </div>
                   <p className="text-secondary mb-0 mt-2" style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-                    {post.User?.bio || "A dedicated BlogHub User"}
+                    {post.User?.bio || "A dedicated Techvlog User"}
                   </p>
                 </div>
               </div>

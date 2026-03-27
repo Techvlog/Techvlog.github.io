@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../api/api";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { UserContext } from "../../context/usercontext";
@@ -33,11 +34,11 @@ const BlogEditor = () => {
         let data;
         // Try slug endpoint first; fall back to ID endpoint for numeric params
         try {
-          const res = await axios.get(`http://localhost:3000/api/post/${urlSlug}`);
+          const res = await axios.get(`${API_URL}/api/post/${urlSlug}`);
           data = res.data;
         } catch (slugErr) {
           if (/^\d+$/.test(urlSlug)) {
-            const res = await axios.get(`http://localhost:3000/api/getblog/${urlSlug}`);
+            const res = await axios.get(`${API_URL}/api/getblog/${urlSlug}`);
             data = res.data;
           } else {
             throw slugErr;
@@ -130,7 +131,7 @@ const BlogEditor = () => {
       formData.append("image", file);
 
       const response = await axios.post(
-        "http://localhost:3000/image/upload",
+        `${API_URL}/image/upload`,
         formData,
         {
           headers: {
@@ -182,7 +183,7 @@ const BlogEditor = () => {
       };
 
       const { data } = await axios.post(
-        `http://localhost:3000/api/updateblog/${postId}`,
+        `${API_URL}/api/updateblog/${postId}`,
         updatedPost,
         { withCredentials: true }
       );

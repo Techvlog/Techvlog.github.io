@@ -328,7 +328,7 @@ function Home() {
                 <div style={{ position: "sticky", top: 100 }}>
 
                   <div className="sidebar-block">
-                    <p className="sidebar-title">About BlogHub</p>
+                    <p className="sidebar-title">About Techvlog</p>
                     <p style={{ fontSize: "0.83rem", color: "var(--ink-60)", lineHeight: 1.65, marginBottom: "1rem" }}>
                       A space for writers and readers to connect, share ideas, and discover new perspectives.
                     </p>

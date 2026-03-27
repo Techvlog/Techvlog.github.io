@@ -65,7 +65,7 @@ const LoginPage = ({ onNavigate }) => {
                   <div className="text-center mb-5">
                     <h2 className="mb-3 text-dark fw-bold" style={{ fontFamily: '"Outfit", sans-serif', fontSize: '2.5rem' }}>Welcome Back</h2>
                     <p className="text-secondary">
-                      Sign in to your <span className="fw-bold text-dark">BlogHub</span> account
+                      Sign in to your <span className="fw-bold text-dark">Techvlog</span> account
                     </p>
                   </div>
 

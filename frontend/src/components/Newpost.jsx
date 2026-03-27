@@ -3,6 +3,7 @@ import { useMakepost } from "../../hooks/hooks";
 import { UserContext } from "../../context/usercontext";
 import { useContext } from "react";
 import axios from "axios";
+import { API_URL } from "../api/api";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
@@ -386,7 +387,7 @@ function BlogWriter() {
     try {
       const formData = new FormData();
       formData.append("image", file);
-      const response = await axios.post("http://localhost:3000/image/upload", formData, {
+      const response = await axios.post(`${API_URL}/image/upload`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       setIsUploading(false);

@@ -167,7 +167,7 @@ function Publications() {
                             overflow: "hidden",
                           }}
                         >
-                          {pub.description || "A curated publication on BlogHub."}
+                          {pub.description || "A curated publication on Techvlog."}
                         </p>
 
                         {/* Footer row */}

@@ -216,7 +216,7 @@ const YourBlogPage = ({ onNavigate }) => {
                                     <img src={followedUser.avatar || "https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_1280.png"} alt={followedUser.firstName} className="rounded-circle me-3" width="50" height="50" style={{ objectFit: "cover" }} />
                                     <div className="overflow-hidden">
                                       <h6 className="text-dark mb-0 fw-bold text-truncate">{followedUser.firstName} {followedUser.lastName}</h6>
-                                      <small className="text-secondary text-truncate d-block">{followedUser.bio || "BlogHub User"}</small>
+                                      <small className="text-secondary text-truncate d-block">{followedUser.bio || "Techvlog User"}</small>
                                     </div>
                                   </div>
                                 </Link>

@@ -114,10 +114,10 @@ const ErrorPage = () => {
               <p className="text-secondary mb-0">
                 Transmit a message to{" "}
                 <a
-                  href="mailto:support@bloghub.com"
+                  href="mailto:support@techvlog.com"
                   style={{ color: "#06b6d4", textDecoration: "none", fontWeight: "600" }}
                 >
-                  support@bloghub.com
+                  support@techvlog.com
                 </a>{" "}
                 or dial{" "}
                 <a href="tel:+1234567890" style={{ color: "#06b6d4", textDecoration: "none", fontWeight: "600" }}>

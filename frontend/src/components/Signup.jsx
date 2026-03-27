@@ -171,7 +171,7 @@ const RegisterPage = () => {
               <div className="col-lg-6">
                 <div className="glass-panel p-5 rounded">
                   <div className="text-center mb-5">
-                    <h2 className="mb-3 text-dark fw-bold" style={{ fontFamily: '"Outfit", sans-serif', fontSize: '2.5rem' }}>Join BlogHub</h2>
+                    <h2 className="mb-3 text-dark fw-bold" style={{ fontFamily: '"Outfit", sans-serif', fontSize: '2.5rem' }}>Join Techvlog</h2>
                     <p className="text-secondary">
                       Create your account to start writing and reading
                     </p>

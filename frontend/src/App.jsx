@@ -28,10 +28,10 @@ function App() {
                   }}
                 >
                   <i className="fas fa-bolt me-2 text-gradient" style={{ fontSize: "1.2rem" }}></i>
-                  <span className="text-dark">Blog</span><span className="text-gradient">Hub</span>
+                  <span className="text-dark">Tech</span><span className="text-gradient">vlog</span>
                 </Link>
                 <p className="text-secondary" style={{ maxWidth: "300px" }}>
-                  BlogHub is a modern platform for writers and readers to
+                  Techvlog is a modern platform for writers and readers to
                   connect, share ideas, and discover new perspectives.
                 </p>
                 <div className="d-flex gap-3 mt-4">
@@ -84,10 +84,10 @@ function App() {
             </div>
             <div className="border-top pt-4 mt-2 mb-0 d-flex flex-column flex-md-row justify-content-between align-items-center">
               <p className="text-secondary mb-2 mb-md-0 small">
-                &copy; {new Date().getFullYear()} BlogHub. All rights reserved.
+                &copy; {new Date().getFullYear()} Techvlog. All rights reserved.
               </p>
               <p className="text-secondary mb-0 small">
-                Made with <i className="fas fa-heart text-danger mx-1"></i> by BlogHub Team
+                Made with <i className="fas fa-heart text-danger mx-1"></i> by Techvlog Team
               </p>
             </div>
           </div>

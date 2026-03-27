@@ -37,7 +37,7 @@ const AboutPage = () => {
                 className="mb-2 text-dark fw-bold"
                 style={{ fontFamily: '"Outfit", sans-serif', fontSize: '2.5rem' }}
               >
-                About BlogHub
+                About Techvlog
               </h1>
               <p className="text-secondary lead mb-0">
                 A full-stack blogging platform built by a college student
@@ -54,7 +54,7 @@ const AboutPage = () => {
               </h5>
               <div className="text-secondary" style={{ fontSize: '1.05rem', lineHeight: '1.9' }}>
                 <p>
-                  BlogHub is a full-stack web application built as a personal project by
+                  Techvlog is a full-stack web application built as a personal project by
                   <span className="text-dark fw-bold"> Asish Kumar Dalal</span>, a college student
                   passionate about web development. What started as an idea to learn modern web
                   technologies turned into a fully functional blogging platform — complete with

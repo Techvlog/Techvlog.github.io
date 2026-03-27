@@ -1,25 +1,29 @@
 import axios from "axios";
+
+// ── Central backend URL (reads from VITE_BACKEND_URL, falls back to localhost) ─
+export const API_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:3000";
+
 export const posts_feature = () => {
-  return axios.get("http://localhost:3000/api/feature");
+  return axios.get(`${API_URL}/api/feature`);
 };
 export const catagories = (limit = 10) => {
-  return axios.get(`http://localhost:3000/api/catagories?limit=${limit}`);
+  return axios.get(`${API_URL}/api/catagories?limit=${limit}`);
 };
 export const latestposts = (page = 1, limit = 6) => {
-  return axios.get(`http://localhost:3000/api/latest?page=${page}&limit=${limit}`);
+  return axios.get(`${API_URL}/api/latest?page=${page}&limit=${limit}`);
 };
 export const popularposts = () => {
-  return axios.get("http://localhost:3000/api/popular");
+  return axios.get(`${API_URL}/api/popular`);
 };
 export const fecthblogbyid = (postid) => {
-  return axios.get(`http://localhost:3000/api/getblog/${postid}`);
+  return axios.get(`${API_URL}/api/getblog/${postid}`);
 };
 export const fetchBlogBySlug = (slug) => {
-  return axios.get(`http://localhost:3000/api/post/${slug}`);
+  return axios.get(`${API_URL}/api/post/${slug}`);
 };
 export const signup = ({ fstname, lstName, email, password, avatar }) => {
   return axios.post(
-    "http://localhost:3000/auth/signup",
+    `${API_URL}/auth/signup`,
     {
       fstname,
       lstName,
@@ -34,7 +38,7 @@ export const signup = ({ fstname, lstName, email, password, avatar }) => {
 };
 export const login = async ({ email, password }) => {
   return axios.post(
-    "http://localhost:3000/auth/login",
+    `${API_URL}/auth/login`,
     { email, password },
     {
       withCredentials: true,
@@ -42,78 +46,78 @@ export const login = async ({ email, password }) => {
   );
 };
 export const fetchbycatagory = (catagory, page = 1, limit = 6) => {
-  return axios.get(`http://localhost:3000/api/cat/${catagory}?page=${page}&limit=${limit}`);
+  return axios.get(`${API_URL}/api/cat/${catagory}?page=${page}&limit=${limit}`);
 };
 export const make_post = (id, post) => {
-  return axios.post(`http://localhost:3000/api/createblog/${id}`, post, {
+  return axios.post(`${API_URL}/api/createblog/${id}`, post, {
     withCredentials: true,
   });
 };
 export const profile = async (page = 1, limit = 6) => {
-  const { data } = await axios.get(`http://localhost:3000/api/profile?page=${page}&limit=${limit}`, {
+  const { data } = await axios.get(`${API_URL}/api/profile?page=${page}&limit=${limit}`, {
     withCredentials: true,
   });
   return data;
 };
 export const Otherprofile = async (id, page = 1, limit = 6) => {
-  const { data } = await axios.get(`http://localhost:3000/api/otherprofile/${id}?page=${page}&limit=${limit}`);
+  const { data } = await axios.get(`${API_URL}/api/otherprofile/${id}?page=${page}&limit=${limit}`);
   return data;
 };
 
 export const followUser = async (id) => {
-  const { data } = await axios.post(`http://localhost:3000/api/follow/${id}`, {}, {
+  const { data } = await axios.post(`${API_URL}/api/follow/${id}`, {}, {
     withCredentials: true,
   });
   return data;
 };
 
 export const unfollowUser = async (id) => {
-  const { data } = await axios.post(`http://localhost:3000/api/unfollow/${id}`, {}, {
+  const { data } = await axios.post(`${API_URL}/api/unfollow/${id}`, {}, {
     withCredentials: true,
   });
   return data;
 };
 
 export const checkFollow = async (id) => {
-  const { data } = await axios.get(`http://localhost:3000/api/check-follow/${id}`, {
+  const { data } = await axios.get(`${API_URL}/api/check-follow/${id}`, {
     withCredentials: true,
   });
   return data;
 };
 export const fetchComments = (postid, page = 1, limit = 4) => {
-  return axios.get(`http://localhost:3000/api/comments/${postid}?page=${page}&limit=${limit}`);
+  return axios.get(`${API_URL}/api/comments/${postid}?page=${page}&limit=${limit}`);
 };
 
 export const saveBlogPost = async (postId) => {
-  const { data } = await axios.post(`http://localhost:3000/api/save-post/${postId}`, {}, {
+  const { data } = await axios.post(`${API_URL}/api/save-post/${postId}`, {}, {
     withCredentials: true,
   });
   return data;
 };
 
 export const unsaveBlogPost = async (postId) => {
-  const { data } = await axios.post(`http://localhost:3000/api/unsave-post/${postId}`, {}, {
+  const { data } = await axios.post(`${API_URL}/api/unsave-post/${postId}`, {}, {
     withCredentials: true,
   });
   return data;
 };
 
 export const checkSavedPost = async (postId) => {
-  const { data } = await axios.get(`http://localhost:3000/api/check-saved/${postId}`, {
+  const { data } = await axios.get(`${API_URL}/api/check-saved/${postId}`, {
     withCredentials: true,
   });
   return data;
 };
 
 export const getSavedPosts = async (page = 1, limit = 6) => {
-  const { data } = await axios.get(`http://localhost:3000/api/saved-posts?page=${page}&limit=${limit}`, {
+  const { data } = await axios.get(`${API_URL}/api/saved-posts?page=${page}&limit=${limit}`, {
     withCredentials: true,
   });
   return data;
 };
 
 // ── Publications ───────────────────────────────────────────────────────────────
-const PUB = "http://localhost:3000/pub";
+const PUB = `${API_URL}/pub`;
 
 export const listPublications = async (page = 1, limit = 12) => {
   const { data } = await axios.get(`${PUB}?page=${page}&limit=${limit}`);
